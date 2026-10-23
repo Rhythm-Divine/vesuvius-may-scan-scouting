@@ -1,0 +1,19 @@
+# scan data, derived volumes and caches never go into git
+data/
+cache/
+logs/
+third_party/
+.venv/
+__pycache__/
+.pytest_cache/
+*.zarr
+*.npy
+*.npz
+*.tif
+*.pth
+# figures/ holds the few small, deliberately published PNGs; any other image stays local
+*.png
+!figures/*.png
+.env
+*.pem
+*.key

@@ -1,0 +1,10 @@
+# Tested with Python 3.14, numpy 2.5.4, scipy 1.18.1, zarr 3.4.1, numcodecs 0.17.1, tifffile 2026.10.15,
+# imagecodecs 2026.10.10, torch 2.14.1 (CUDA). Install the torch build that matches your CUDA driver.
+numpy>=2.3,<3
+scipy>=1.16
+zarr>=3.1,<4
+numcodecs>=0.15,<1
+tifffile>=2025.10
+imagecodecs>=2025.8
+torch>=2.6,<3
+pytest>=8
