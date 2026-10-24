@@ -1,4 +1,4 @@
-# Results (22–23 October 2026)
+# Results (22–24 October 2026)
 
 All numbers come from the scripts in this repository, run on the Vesuvius Challenge open data. Per-batch details,
 including the full candidate statistics, are in `results/`. AUCs are pixel ROC AUCs inside the stated mask. "T" is
@@ -168,7 +168,7 @@ the pre-registered threshold, T = 0.445.
     22%), and more weakly on P4 and P1. It is absent on P2 and P3, 57–72 voxels away.
 - **M1 total:** 29 surfaces, ≈ 109.0 cm² of papyrus on two scrolls, all verdict 1.
 
-## 7. Batches F1–F3 (23 October, before the survey; Hecate on a shared A10G)
+## 6. Batches F1–F3 (23 October, before the survey; Hecate on a shared A10G)
 - **F1** (`results/M1-batch-F1.md`): three untried gated zones on PHerc0490A, 9.53 cm², verdict 1 each.
 - **F2 and F3** (`results/M1-batch-F2-F3.md`): 11 surfaces, 40.0 cm², verdict 1 each.
   - F2 is six test surfaces in new zones on both scrolls. F3 is five windings around F1's best surface.
@@ -177,10 +177,12 @@ the pre-registered threshold, T = 0.445.
   - PHerc0175B: 22 surfaces, 80.8 cm².
   - PHerc0490A: 21 surfaces, 77.7 cm².
 
-## 8. Survey S1: Hecate over the ten May volumes (`results/M1-survey-S1.md`, `results/M1-survey-S1-reviews.tsv`)
+## 7. Survey S1: Hecate over the ten May volumes (`results/M1-survey-S1.md`, `results/M1-survey-S1-reviews.tsv`)
 - **Controls on the survey machine first:**
   - E1b: ensemble AUC 0.9405 and T = 0.4447, against 0.941 and 0.445 before.
   - E1d: the text line is seen again; forward 4.7% ≥ T against 4.5% before.
+  - They ran on the L4s just before the survey, so the GPU time in `results/M1-survey-S1.md` (from 22:22 UTC)
+    includes them. The first survey inference was at 22:50:11, after the pre-registration commit at 22:41:18.
 - **Zones and surfaces:**
   - Scouting succeeded at all 50 heights, and 87 zones were chosen mechanically.
   - 127 surfaces were grown: stage 1, stage 2 and the checks. 108 passed QC, with 435.9 cm² clean.
@@ -198,7 +200,7 @@ the pre-registered threshold, T = 0.445.
   - It does not follow voids, and it has no rows or letter forms.
   - Its second seed landed on another winding with the same kind of cloud.
 
-## 9. Survey S2: reader-v2 on the same 108 surfaces (`results/M1-survey-S2.md`, `results/M1-survey-S2-reviews.tsv`)
+## 8. Survey S2: reader-v2 on the same 108 surfaces (`results/M1-survey-S2.md`, `results/M1-survey-S2-reviews.tsv`)
 - **Controls:**
   - E1b forward AUC 0.927 (validation 0.934), T2 = 0.6275, control background 1.55%. At 80% recall reader-v2 flags
     9.6% of non-ink pixels.
@@ -217,7 +219,7 @@ the pre-registered threshold, T = 0.445.
   - On PHerc0306B z11128_r30_a315, both models show the same band, but it runs across the text direction along a
     vertical fibre bundle. Agreement alone is therefore not the test.
 
-## 10. Throughput (shared A10G, other jobs on the GPU)
+## 9. Throughput (shared A10G, other jobs on the GPU)
 - **Hecate:** about 2.1–4.2 min per run on a 2559² crop (≈ 6 cm²), depending on the other load.
   - 10 runs per surface (5 windows × 2 directions) gives 6.5–13 cm² of readout area per GPU-hour.
   - Peak GPU memory is ≤ 1.8 GB.
