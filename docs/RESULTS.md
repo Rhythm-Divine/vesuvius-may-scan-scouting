@@ -168,7 +168,56 @@ the pre-registered threshold, T = 0.445.
     22%), and more weakly on P4 and P1. It is absent on P2 and P3, 57–72 voxels away.
 - **M1 total:** 29 surfaces, ≈ 109.0 cm² of papyrus on two scrolls, all verdict 1.
 
-## 6. Throughput (shared A10G, other jobs on the GPU)
+## 7. Batches F1–F3 (23 October, before the survey; Hecate on a shared A10G)
+- **F1** (`results/M1-batch-F1.md`): three untried gated zones on PHerc0490A, 9.53 cm², verdict 1 each.
+- **F2 and F3** (`results/M1-batch-F2-F3.md`): 11 surfaces, 40.0 cm², verdict 1 each.
+  - F2 is six test surfaces in new zones on both scrolls. F3 is five windings around F1's best surface.
+  - It was the quietest batch so far: nine of eleven surfaces sat below the control background in both directions.
+- **M1 total before the survey:** 43 surfaces, about 158.5 cm², all verdict 1.
+  - PHerc0175B: 22 surfaces, 80.8 cm².
+  - PHerc0490A: 21 surfaces, 77.7 cm².
+
+## 8. Survey S1: Hecate over the ten May volumes (`results/M1-survey-S1.md`, `results/M1-survey-S1-reviews.tsv`)
+- **Controls on the survey machine first:**
+  - E1b: ensemble AUC 0.9405 and T = 0.4447, against 0.941 and 0.445 before.
+  - E1d: the text line is seen again; forward 4.7% ≥ T against 4.5% before.
+- **Zones and surfaces:**
+  - Scouting succeeded at all 50 heights, and 87 zones were chosen mechanically.
+  - 127 surfaces were grown: stage 1, stage 2 and the checks. 108 passed QC, with 435.9 cm² clean.
+  - No seed, growth or read failed.
+- **Reading:** 108 surfaces were read and 91 reviewed by eye. 89 got verdict 1 and 2 got verdict 2; none was
+  escalated.
+  - **PHerc0175A z8923_r55_a022 (reverse):** a row of about five blobs over 8–10 mm along the text direction. Its row
+    check failed: the row recurs on the inward winding, 35 voxels away.
+  - **PHerc0268 z12608_r55_a067 (reverse):** a row over 6.4 mm. Its row check failed: the second seed did not reach
+    the row, and a shorter piece of the band recurs on the outward winding.
+  - **A third row check, on PHerc0175A z6374_r55_a112,** also failed. The row lies on a crack that is visible in the
+    CT.
+- **The strongest forward response, PHerc0175A z6374_r30_a270** (13.7% ≥ T), stays unexplained.
+  - Its neighbouring layers read as background.
+  - It does not follow voids, and it has no rows or letter forms.
+  - Its second seed landed on another winding with the same kind of cloud.
+
+## 9. Survey S2: reader-v2 on the same 108 surfaces (`results/M1-survey-S2.md`, `results/M1-survey-S2-reviews.tsv`)
+- **Controls:**
+  - E1b forward AUC 0.927 (validation 0.934), T2 = 0.6275, control background 1.55%. At 80% recall reader-v2 flags
+    9.6% of non-ink pixels.
+  - E1d: the text line shows as separate stroke shapes, 5.07% ≥ T2 forward, with 93% agreement with Hecate.
+- **Reading:** 108 surfaces were read and 91 reviewed. 88 got verdict 1 and 3 got verdict 2; none was escalated.
+  - **PHerc1218 z6974_r55_a067 (reverse), the closest case.**
+    - 5 blobs run 5.4 mm along the text direction, with 61% agreement with Hecate.
+    - By eye they are round soft blobs in a field spread over 14 mm of height, not a line like the E1d text.
+    - Band contrast is 4.5×, against 13× for the E1d text.
+  - **PHerc0483A z7949_r55_a202 (forward):** two letter-sized blobs over 4.4 mm, below the 5 mm the rule requires.
+  - **PHerc0175A z8923_r55_a022 (reverse):** the S1 row, which reader-v2 shows as one continuous band.
+- **What the second model changes:**
+  - reader-v2 is quiet on most surfaces: median 0.8% ≥ T2, against its background of 1.55%.
+  - Both models agree on a few shapeless clouds: PHerc0175A z6374 and PHerc0800 z12149, up to 18% ≥ T2 with 70–95%
+    agreement.
+  - On PHerc0306B z11128_r30_a315, both models show the same band, but it runs across the text direction along a
+    vertical fibre bundle. Agreement alone is therefore not the test.
+
+## 10. Throughput (shared A10G, other jobs on the GPU)
 - **Hecate:** about 2.1–4.2 min per run on a 2559² crop (≈ 6 cm²), depending on the other load.
   - 10 runs per surface (5 windows × 2 directions) gives 6.5–13 cm² of readout area per GPU-hour.
   - Peak GPU memory is ≤ 1.8 GB.

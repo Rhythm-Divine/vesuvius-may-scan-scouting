@@ -14,6 +14,7 @@ Usage: python overview.py --sample PHerc0490B --volume-id 20250521151215 --level
 import argparse
 import concurrent.futures as cf
 import json
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -27,13 +28,20 @@ B = "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com"
 CAT = B + "/metadata.json"
 
 
-def get(url, timeout=300):
-    try:
-        return urllib.request.urlopen(url, timeout=timeout).read()
-    except urllib.error.HTTPError as e:
-        if e.code in (403, 404):
-            return None
-        raise
+def get(url, timeout=300, tries=5):
+    """GET a public URL; None on 403/404. Retries transient failures (DNS, resets, timeouts, 5xx) with backoff."""
+    for attempt in range(tries):
+        try:
+            return urllib.request.urlopen(url, timeout=timeout).read()
+        except urllib.error.HTTPError as e:
+            if e.code in (403, 404):
+                return None
+            if attempt == tries - 1:
+                raise
+        except (urllib.error.URLError, ConnectionError, TimeoutError):
+            if attempt == tries - 1:
+                raise
+        time.sleep(2 ** attempt)
 
 
 def catalogue_paths(sample, vid):

@@ -6,6 +6,8 @@ Usage: python e1/fetch_control.py
 import concurrent.futures as cf
 import os
 import re
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -36,7 +38,14 @@ def get(k):
     if dst.exists() and dst.stat().st_size > 0:
         return 0
     dst.parent.mkdir(parents=True, exist_ok=True)
-    data = urllib.request.urlopen(f"{B}/{urllib.parse.quote(k)}", timeout=300).read()
+    for attempt in range(5):   # the resolver and the bucket occasionally drop a request
+        try:
+            data = urllib.request.urlopen(f"{B}/{urllib.parse.quote(k)}", timeout=300).read()
+            break
+        except (urllib.error.URLError, ConnectionError, TimeoutError):
+            if attempt == 4:
+                raise
+            time.sleep(2 ** attempt)
     tmp = dst.with_name(dst.name + ".part")
     tmp.write_bytes(data)
     os.replace(tmp, dst)

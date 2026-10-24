@@ -1,0 +1,92 @@
+reviewed	sample	zone	mesh	verdict	note
+2026-10-24T13:00Z	PHerc0175A	z6374_r30_a270	auto_grown_20261023225142761	1	Forward: a broad diffuse cloud over the left and upper two-thirds (10.9% >= T2), shapeless, no strokes or rows. Hecate shows it at the same place (84% agreement). Both models respond, but as a cloud, not letter forms: the strongest unexplained response of the survey.
+2026-10-24T13:00Z	PHerc0175A	z3824_r30_a090	auto_grown_20261023224650884	1	Mottle with stripe texture across the text direction; no rows.
+2026-10-24T13:00Z	PHerc0175A	z3824_r55_a247	auto_grown_20261023224151665	1	Even mottle with faint bands; no rows.
+2026-10-24T13:00Z	PHerc0175A	z6374_r30_a315	auto_grown_20261023225639482	1	Speckle; a shapeless reverse cloud in the upper middle.
+2026-10-24T13:00Z	PHerc0175A	z8923_r30_a225	auto_grown_20261023230145114	1	Forward nearly empty; sparse reverse blobs.
+2026-10-24T13:00Z	PHerc0175A	z8923_r55_a157	auto_grown_20261023231129033	1	Even mottle in both directions.
+2026-10-24T13:00Z	PHerc0175A	z8923_r55_a022	auto_grown_20261023230627937	2	The S1 reverse row (8-10 mm along the text direction) shows in reader-v2 as one continuous smooth band, not separate letter-like blobs. A broad forward cloud lies at the lower left. Not escalated: no row of separate blobs, and the S1 row check found the band on the inward winding.
+2026-10-24T13:00Z	PHerc0175A	z8923_r30_a135	auto_grown_20261023231640135	1	Reverse: parallel streaks along the fibres about 1 mm apart over the whole surface (fibre texture, as in S1).
+2026-10-24T13:00Z	PHerc0175A	z6374_r55_a112	auto_grown_20261023232143718	1	Forward: a blobby band along the CT crack in the lower third (the S1 crack row); reverse sparse. Row check 2 already failed.
+2026-10-24T13:00Z	PHerc0175A	z6374_r30_a045	auto_grown_20261023232627099	1	Mottle beside dark void channels; no rows.
+2026-10-24T13:00Z	PHerc0175A	z6374_r55_a157	auto_grown_20261023233549991	1	Even mottle in both directions.
+2026-10-24T13:00Z	PHerc0175A	z6374_r30_a225	auto_grown_20261023233125426	1	Scattered blobs; one shapeless reverse cluster in the upper middle.
+2026-10-24T13:00Z	PHerc0175A	z6374_r55_a157_w1	auto_grown_20261024000834866	1	Even mottle.
+2026-10-24T13:00Z	PHerc0175A	z6374_r55_a157_w2	auto_grown_20261024001339084	1	Even mottle.
+2026-10-24T13:00Z	PHerc0175A	z6374_r55_a157_w4	auto_grown_20261024002307092	1	Even mottle.
+2026-10-24T13:00Z	PHerc0175A	z6374_r55_a157_w3	auto_grown_20261024001841830	1	Sparse; vertical fibre-streak texture.
+2026-10-24T13:00Z	PHerc0175A	z6374_r30_a270_f_out	auto_grown_20261024014419383	1	Sparse speckle with fibre bands.
+2026-10-24T13:00Z	PHerc0175A	z6374_r30_a270_f_z200	auto_grown_20261024014820683	1	Forward: a dense diffuse cloud over the lower two-thirds (18.0% >= T2), shapeless; Hecate agrees (95%). Same kind of response as z6374_r30_a270.
+2026-10-24T13:00Z	PHerc0175A	z8923_r55_a022_r_s2	auto_grown_20261024035221864	1	Parallel streak bands along the z-lines about 1.3 mm apart in both directions: the papyrus fibre grid, as in S1.
+2026-10-24T13:00Z	PHerc0175A	z8923_r55_a022_r_in	auto_grown_20261024035646983	1	Dense mottle in both directions.
+2026-10-24T13:00Z	PHerc0175A	z8923_r55_a022_r_out	auto_grown_20261024040110269	1	Dense forward mottle over the lower half; reverse mottle.
+2026-10-24T13:00Z	PHerc0175A	z6374_r55_a112_r_s2	auto_grown_20261024060832996	1	Mottle with a dense cloud at the upper left.
+2026-10-24T13:00Z	PHerc0175A	z6374_r55_a112_r_in	auto_grown_20261024061321442	1	A dense blob mass along the crack band in the upper middle (16.8% forward).
+2026-10-24T13:00Z	PHerc0175A	z6374_r55_a112_r_out	auto_grown_20261024061802674	1	Mottle and a band along the crack.
+2026-10-24T13:00Z	PHerc0175B	z2384_r55_a112	auto_grown_20261023234543151	1	A forward cloud of blobs at the left and streaks along the z-lines; one compact reverse blob.
+2026-10-24T13:00Z	PHerc0175B	z4769_r80_a315	auto_grown_20261024000429609	1	Forward: a smooth diffuse band along the z-lines over the middle (the S1 Hecate band), no separate blobs; reverse sparse.
+2026-10-24T13:00Z	PHerc0175B	z2384_r55_a112_w1	auto_grown_20261024003058132	1	Forward: a dense shapeless cluster below the contact boundary; reverse sparse.
+2026-10-24T13:00Z	PHerc0175B	z2384_r55_a112_w3	auto_grown_20261024004059778	1	Streaks along the z-lines (fibre-like) and sparse blobs.
+2026-10-24T13:00Z	PHerc0175B	z2384_r55_a112_w4	auto_grown_20261024004557809	1	A diffuse band along the z-lines; mottle.
+2026-10-24T13:00Z	PHerc0268	z12608_r55_a067	auto_grown_20261023234630732	1	reader-v2 does not show the S1 reverse row: reverse 0.5% >= T2 (below the 1.55% background), a few scattered compact blobs. The S1 verdict 2 rested on Hecate alone.
+2026-10-24T13:00Z	PHerc0268	z12608_r55_a067_r_in	auto_grown_20261024084333515	1	A diagonal band of dense mottle in both directions.
+2026-10-24T13:00Z	PHerc0306B	z7949_r55_a067	auto_grown_20261023224151657	1	Speckle beside a dark crack.
+2026-10-24T13:00Z	PHerc0306B	z11128_r55_a292	auto_grown_20261023224715687	1	Speckle; one elongated forward blob along the fibres.
+2026-10-24T13:00Z	PHerc0306B	z2384_r55_a157	auto_grown_20261023225816166	1	Mottle over an area fragmented by contacts.
+2026-10-24T13:00Z	PHerc0306B	z11128_r30_a225	auto_grown_20261023225223063	1	Even mottle.
+2026-10-24T13:00Z	PHerc0306B	z11128_r30_a045	auto_grown_20261023230329427	1	Reverse: a dense blobby mottle over badly damaged papyrus (voids and cracks in the CT), 7-13% >= T2 locally; Hecate agrees (67%). The row finder's 8-blob chain is part of the cloud; no row of separate blobs.
+2026-10-24T13:00Z	PHerc0306B	z11128_r30_a315	auto_grown_20261023230812823	1	Reverse: a band about 5 mm long running across the text direction, along a vertical fibre bundle seen in the CT; Hecate shows the same band. Agreement on fibre structure, not text.
+2026-10-24T13:00Z	PHerc0306B	z7949_r30_a135	auto_grown_20261023231843821	1	Mottle beside a dark crack.
+2026-10-24T13:00Z	PHerc0306B	z13513_r55_a337	auto_grown_20261023232402202	1	Mottle; one bright elongated forward blob along the crack.
+2026-10-24T13:00Z	PHerc0306B	z11128_r30_a000	auto_grown_20261023232930384	1	Mottle beside a dark crack.
+2026-10-24T13:00Z	PHerc0306B	z11128_r30_a180	auto_grown_20261023233425127	1	Mottle beside a crack.
+2026-10-24T13:00Z	PHerc0306B	z11128_r55_a292_w1	auto_grown_20261024001035093	1	Mottle and a crack band.
+2026-10-24T13:00Z	PHerc0306B	z11128_r55_a292_w2	auto_grown_20261024001559105	1	Mottle with a diagonal fibre band.
+2026-10-24T13:00Z	PHerc0306B	z11128_r55_a292_w3	auto_grown_20261024002112376	1	Mottle beside a crack.
+2026-10-24T13:00Z	PHerc0306B	z11128_r55_a292_w4	auto_grown_20261024002607694	1	Mottle beside a crack.
+2026-10-24T13:00Z	PHerc0483A	z4769_r30_a090	auto_grown_20261023224151702	1	Sparse with streaks along the fibres; one small cluster, the same in both directions.
+2026-10-24T13:00Z	PHerc0483A	z4769_r30_a270	auto_grown_20261023224701041	1	Scattered compact blobs; no rows.
+2026-10-24T13:00Z	PHerc0483A	z2384_r55_a022	auto_grown_20261023225229233	1	A mottled cloud at the upper left in both directions.
+2026-10-24T13:00Z	PHerc0483A	z2384_r55_a247	auto_grown_20261023225809892	1	Mottle; one small cluster in reverse.
+2026-10-24T13:00Z	PHerc0483A	z7949_r30_a270	auto_grown_20261023230330990	1	Sparse compact blobs; no rows.
+2026-10-24T13:00Z	PHerc0483A	z11128_r55_a337	auto_grown_20261023230732850	1	Sparse speckle.
+2026-10-24T13:00Z	PHerc0483A	z2384_r30_a000	auto_grown_20261023231254065	1	Fibre-streak texture and small clusters.
+2026-10-24T13:00Z	PHerc0483A	z2384_r30_a315	auto_grown_20261023232350964	1	Sparse; clusters at the lower right.
+2026-10-24T13:00Z	PHerc0483A	z7949_r55_a202	auto_grown_20261023233428223	2	Forward: a short chain of two letter-sized blobs (0.8 x 1.6 mm and 2.3 x 1.3 mm) running along the text direction over 4.4 mm, on an otherwise quiet surface (1.0% >= T2). Hecate shows a cluster at the same place, in both directions. No legible letters. Below the 5 mm row criterion, so not escalated; the most text-like S2 feature.
+2026-10-24T13:00Z	PHerc0483A	z7949_r55_a157	auto_grown_20261023233913546	1	Sparse.
+2026-10-24T13:00Z	PHerc0483A	z2384_r30_a315_w1	auto_grown_20261024000534980	1	Sparse; a small cluster with one elongated blob.
+2026-10-24T13:00Z	PHerc0483A	z2384_r30_a315_w2	auto_grown_20261024001004072	1	Speckle with fibre streaks.
+2026-10-24T13:00Z	PHerc0483A	z2384_r30_a315_w3	auto_grown_20261024001528167	1	A central cluster with an elongated blob across the text direction.
+2026-10-24T13:00Z	PHerc0483A	z2384_r30_a315_w4	auto_grown_20261024002050290	1	Sparse.
+2026-10-24T13:00Z	PHerc0483B	z5940_r55_a292	auto_grown_20261023224714661	1	A diffuse cloud at the lower left in both directions.
+2026-10-24T13:00Z	PHerc0483B	z10098_r30_a090	auto_grown_20261023225244714	1	Clusters, and a chain of blobs running across the text direction in the centre.
+2026-10-24T13:00Z	PHerc0483B	z5940_r55_a247	auto_grown_20261023230329273	1	Speckle with a fibre band.
+2026-10-24T13:00Z	PHerc0483B	z10098_r30_a045	auto_grown_20261023230915371	1	Dense mottle in both directions.
+2026-10-24T13:00Z	PHerc0483B	z3564_r55_a067	auto_grown_20261023232056510	1	Sparse compact blobs.
+2026-10-24T13:00Z	PHerc0483B	z10098_r30_a000	auto_grown_20261023233147024	1	A dense mottled cloud in the upper middle, in both directions.
+2026-10-24T13:00Z	PHerc0483B	z3564_r55_a067_w1	auto_grown_20261023235335019	1	Sparse; one elongated blob along the z-lines.
+2026-10-24T13:00Z	PHerc0483B	z3564_r55_a067_w2	auto_grown_20261023235828546	1	A compact cluster across the text direction at the bottom, in both directions.
+2026-10-24T13:00Z	PHerc0483B	z3564_r55_a067_w3	auto_grown_20261024000409417	1	Speckle; one short streak along the fibres.
+2026-10-24T13:00Z	PHerc0483B	z3564_r55_a067_w4	auto_grown_20261024000942627	1	Mottle with short streaks.
+2026-10-24T13:00Z	PHerc0800	z17008_r55_a112	auto_grown_20261023224151654	1	Mottle.
+2026-10-24T13:00Z	PHerc0800	z12149_r30_a225	auto_grown_20261023224827397	1	Dense mottle in bands; no separate letter-sized blobs.
+2026-10-24T13:00Z	PHerc0800	z12149_r30_a135	auto_grown_20261023225500052	1	Mottle; a thin reverse streak across the text direction.
+2026-10-24T13:00Z	PHerc0800	z12149_r30_a180	auto_grown_20261023230111483	1	Dense mottle in both directions.
+2026-10-24T13:00Z	PHerc0800	z20653_r30_a090	auto_grown_20261023231519178	1	Mottle around small voids.
+2026-10-24T13:00Z	PHerc0800	z12149_r30_a090	auto_grown_20261023232232692	1	Reverse: a dense shapeless cloud at the right (13.3% >= T2); Hecate agrees (68%).
+2026-10-24T13:00Z	PHerc0800	z17008_r55_a202	auto_grown_20261023232911899	1	Mottle; a reverse cloud at the left.
+2026-10-24T13:00Z	PHerc0800	z20653_r30_a180	auto_grown_20261023233530777	1	Mottle; a reverse cloud at the upper right.
+2026-10-24T13:00Z	PHerc0800	z17008_r55_a022	auto_grown_20261023234237784	1	Mottle.
+2026-10-24T13:00Z	PHerc0800	z17008_r80_a090	auto_grown_20261023235011359	1	Dense mottle in both directions; one shapeless reverse cluster.
+2026-10-24T13:00Z	PHerc0800	z12149_r30_a135_w1	auto_grown_20261024000335228	1	Dense mottle and clouds in both directions (7.9% and 10.1% >= T2) with diagonal fibre texture; no row of separate blobs.
+2026-10-24T13:00Z	PHerc0800	z12149_r30_a135_w2	auto_grown_20261024001007517	1	Forward: a dense shapeless cloud over the left and centre (16.3% >= T2) with a curved band at its right edge; it is the S1 Hecate cloud (70% agreement). No letter forms.
+2026-10-24T13:00Z	PHerc0800	z12149_r30_a135_w3	auto_grown_20261024001724373	1	Forward: a dense blobby cloud over much of the surface (15.6% >= T2); reverse mottle with parallel fibre streaks.
+2026-10-24T13:00Z	PHerc0800	z12149_r30_a135_w4	auto_grown_20261024002404041	1	Mottle.
+2026-10-24T13:00Z	PHerc1218	z11623_r30_a135	auto_grown_20261023224151722	1	Mottle; the S1 Hecate band across the text direction shows only as mottle.
+2026-10-24T13:00Z	PHerc1218	z6974_r55_a067	auto_grown_20261023224659643	2	Reverse: a field of soft round blobs 1-2 mm across over most of the surface (3.3% >= T2; forward 0.5%). Within it the row finder chains 5 separate blobs over 5.4 mm along the text direction (heights within 1.1 mm), and 61% of their >= T2 pixels lie within 0.3 mm of Hecate's >= T pixels, so the numeric parts of the escalation rule are met. By eye it is not like the E1d line in reader-v2: round soft blobs without strokes, spread over 14 mm of height instead of one line on a quiet background (best 1 mm band 10.7% against a median 2.4%; E1d text: 37.8% against 2.9%). Not escalated: the closest S2 case.
+2026-10-24T13:00Z	PHerc1218	z11623_r30_a045	auto_grown_20261023225057601	1	Sparse; faint vertical fibre streaks.
+2026-10-24T13:00Z	PHerc1218	z3487_r30_a090	auto_grown_20261023230013068	1	Forward: a diagonal band of dense mottle along the z-lines at the lower left, with no separate letter-sized blobs (no row by the finder); a reverse cloud in the centre.
+2026-10-24T13:00Z	PHerc1218	z6974_r30_a090	auto_grown_20261023231641700	1	Sparse mottle.
+2026-10-24T13:00Z	PHerc1218	z16272_r30_a225	auto_grown_20261023232249314	1	Faint rows of small blobs along the z-lines, mostly below T2 (0.2% forward), as in S1.
+2026-10-24T13:00Z	PHerc1218	z11623_r30_a045_w1	auto_grown_20261023234435180	1	Sparse speckle with vertical streak texture.
+2026-10-24T13:00Z	PHerc1218	z11623_r30_a045_w3	auto_grown_20261023235401143	1	Faint dashes along the z-lines, mostly below T2 (0.1%); one compact reverse blob across the z-lines.

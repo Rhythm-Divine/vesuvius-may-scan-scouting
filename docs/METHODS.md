@@ -97,3 +97,60 @@ volume unless stated otherwise.
   - Everything else is the search pipeline unchanged.
   - The pass criterion was fixed before the run. Agreement with the winner's sheet was checked afterwards, against a
     4×-densified copy of their mesh.
+
+## 8. Survey S1 over the ten May volumes (`m1/survey_*.py`, `m1/batch/`)
+- **Volumes:** the ten May 8.64 µm volumes with m7 predictions and normal grids in the public catalogue
+  (`m1/survey_volumes.py`).
+- **Scouting:** `e2/zoom.py --angles 8` at 15, 30, 50, 70 and 85% of each volume's height. That gives 24 level-1 crops
+  per height, at 3 radii × 8 directions.
+- **Zones, chosen mechanically** (`m1/survey_select.py`):
+  - **Gate:** merged share ≤ 0.17, ≥ 20 crossings, ≥ 90% inside the CT.
+  - **Exclusions:** zones already grown (same radius, within 30°, within 1,700 slices), and near-duplicates within the
+    survey (within 2,500 slices).
+  - **Ranking:** by merged share, then crossings. Up to 12 zones per volume, 4 for the two volumes searched before.
+  - The list (87 zones) was committed with the pre-registration.
+- **Stage 1** (`m1/batch/survey_trace.sh`): one test surface per zone.
+  - Seed at the crop centre, growth (step 20, 80 generations), self-crossing census, 48-layer render, resample to
+    9.604 µm.
+  - Each worker has its own VC3D cache and CPU slice and takes whole volumes, because the normal-grid cache is per
+    volume.
+  - **QC gate:** ≥ 2 cm² clean (8-cell contact exclusion) and ≥ 0.8 on papyrus. The QC row is logged before any
+    inference.
+- **Stage 2** (`m1/batch/survey_stage2.sh`): four neighbouring windings (`m1/seeds_radial.py --inward 2 --outward 2`)
+  around each volume's best kept zone with ≥ 3 cm² clean.
+- **Reading** (`m1/batch/survey_gpu.sh`): Hecate exactly as in §5–6, one worker per GPU, from a shared queue.
+- **Triage** (`m1/survey_triage.py`): a surface is reviewed by eye when either direction has area ≥ T above 1.2%, a
+  candidate ≥ 1 mm, or mean p above 0.06, and also every fifth surface.
+- **Pre-declared checks, added as dated deviations before their surfaces were grown:**
+  - **Follow-up** (`m1/batch/survey_followup.sh`): for surfaces above 9.4% ≥ T, grow the neighbouring windings and a
+    second seed.
+  - **Row check** (`m1/batch/survey_rowcheck.sh`, `m1/rowcheck_seeds.py`, `m1/rowcheck_eval.py`): for a reviewed row
+    of blobs ≥ 5 mm along the text direction, grow a second seed taken from the mesh 3.5 mm away, plus both
+    neighbouring windings, and map the row onto each.
+  - **Pass and fail readings were fixed in advance:**
+    - a row recurring on a neighbouring winding fails;
+    - a second-seed surface that does not reach the row fails;
+    - a row recurring on the same sheet passes, and goes to escalation.
+
+## 9. Survey S2: a second, independent ink model (`m2/`)
+- **Model:** reader-v2 (`reader-v2-step040000.pth`, sha256 in `SHA256SUMS.models`), a 3D-stem/2D U-Net with a
+  17-layer window, run through villa's `koine_machines` at 47a9c37 in a locked uv environment
+  (`setup_reader_v2.sh`).
+- **Input:** each kept S1 mesh, rendered again natively at 8.64 µm with 48 layers, exactly as S1 rendered before
+  resampling.
+- **Reading** (`m2/r2_infer.sh`): forward and reverse, each the mean of three 17-layer windows (centred, +2, −2;
+  overlap 0.5, Hann blending).
+- **Alignment** (`m2/r2_combine.py`): the maps are resampled to S1's 9.604 µm grid the way the renders were and
+  cropped to S1's window, so they line up pixel for pixel with Hecate's.
+- **Readout** (`m2/readout_r2.py`): S1's valid area and candidate rules with reader-v2's own threshold T2 = 0.6275.
+  T2 is the median reader-v2 probability on the organisers' PHerc0009B ink labels.
+  - It also reports, per direction, the share of ≥ T2 pixels within 0.3 mm of Hecate's ≥ T pixels (agreement).
+- **Triage** (`m2/triage_r2.py`): area ≥ T2 above reader-v2's control background (1.55%) or a candidate ≥ 1 mm, and
+  also every fifth surface.
+- **Escalation:** a reader-v2 row of separate blobs ≥ 5 mm along the text direction, like the E1d line, with at least
+  half of its ≥ T2 pixels within 0.3 mm of Hecate's ≥ T pixels.
+- **Looking aids** (no numbers feed a verdict):
+  - contact sheets and full-resolution crops beside Hecate's maps (`m2/contact_r2.py`, `m2/crop_r2.py`);
+  - a row test on reader-v2's map, with band contrast and z-autocorrelation (`m2/zprofile_r2.py`);
+  - a row finder on reader-v2 candidates (`m2/rowfind_r2.py`);
+  - a row agreement check (`m2/row_agree.py`).

@@ -9,7 +9,7 @@ SAMPLE="${SAMPLE:-PHerc0175B}"; VOL="${VOL:-20250521125822}"   # env overrides f
 B="https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/$SAMPLE/representations/predictions/surfaces"
 PRED="$B/$VOL-surface-20260413222639-surface-m7-L0-th0.2.zarr"
 NG_URL="$B/$VOL-surface-20260413222639-surface-m7-L0-th0.2.normal-grids"
-O="$R/data/m1/$SAMPLE"; NG="$R/cache/ng/$SAMPLE"; C="$R/cache/vc3d"
+O="$R/data/m1/$SAMPLE"; NG="$R/cache/ng/$SAMPLE"; C="${VC3D_CACHE:-$R/cache/vc3d}"   # VC3D_CACHE: per-worker cache
 mkdir -p "$O/meshes" "$NG" "$C/config" "$C/remote" "$C/grow" "$R/cache/tmp" "$O/render"
 export TMPDIR="$R/cache/tmp" OMP_NUM_THREADS=$GROW_THREADS OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 CUDA_VISIBLE_DEVICES="" \
        VC3D_CONFIG_DIR="$C/config"
