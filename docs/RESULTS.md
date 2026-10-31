@@ -1,4 +1,4 @@
-# Results (22–24 October 2026)
+# Results (22–25 October 2026)
 
 All numbers come from the scripts in this repository, run on the Vesuvius Challenge open data. Per-batch details,
 including the full candidate statistics, are in `results/`. AUCs are pixel ROC AUCs inside the stated mask. "T" is
@@ -218,6 +218,35 @@ the pre-registered threshold, T = 0.445.
     agreement.
   - On PHerc0306B z11128_r30_a315, both models show the same band, but it runs across the text direction along a
     vertical fibre bundle. Agreement alone is therefore not the test.
+
+## 8a. Survey S3: more windings, a deeper read (`results/M1-survey-S3.md`, `-reviews.tsv`, `-hecate.tsv`)
+- **Surfaces:** up to eight neighbouring windings around each of the 69 zones kept in S1. 49 of 134 queued jobs started
+  before the pre-registered stop; they grew 361 surfaces. 12 failed QC and 34 duplicated a surface already read.
+  - 315 new surfaces were read: 1,296.4 cm² clean, about 1,123 cm² after removing each one's overlap with the nearest
+    surface read before it.
+- **Reading:** reader-v2 near the mesh (S2's three windows) and in two 17-layer windows shifted +6 and −6 layers, on
+  every new surface; the 108 S1 surfaces got the two deeper windows.
+  - Controls on this run: E1b forward AUC 0.9266 near, 0.886 at +6, 0.782 at −6. The E1d text line shows at all three
+    depths, with Hecate agreeing on 93%, 79% and 82%.
+- **Reviews:** 383 surfaces: 363 verdict 1, 20 verdict 2, 0 verdict 3. Hecate checked all 28 maps behind the 20.
+- **Three rows met the escalation rule** (PHerc0483B z10098_r30_a090_o3 at +6 reverse, 6.6 mm, 75% agreement;
+  PHerc0483A z4769_r30_a090_i1 at −6 forward, 5.8 mm, 81%; PHerc0175A z8923_r30_a225_o1 at −6 reverse, 6.9 mm,
+  100%). They are blobs and bars, not clear strokes, and none showed letters. Seventeen other verdict-2 rows failed:
+  forms on CT-visible cracks or voids, forms across the text direction, blob fields, under half agreement, or
+  structure that recurs on neighbouring windings.
+
+## 8b. S3b: a closer look at the three rows (`results/M1-survey-S3b.md`)
+- **Pre-registered tests**, with the E1d text line as the control:
+  - depth: both models at nine depths (±10 layers); the peak must lie within 3 layers of a sheet face the CT shows,
+    and not on CT voids;
+  - continuity: on a larger surface regrown from the row (160 generations), a chain of ≥ 3 separate blobs ≥ 10 mm
+    along the row, with ≥ 50% two-model agreement.
+- **Control:** E1d passed the depth test (reader-v2 peak 2.2 layers from the mesh, 1.2 from a face, 98% agreement with
+  Hecate) but the chain
+  finder traced only 7.2 mm of it. Continuity was therefore uncalibrated and no row could become a strong candidate.
+- **Rows:** one fails the depth test (peak at the mesh, 4 layers from a face); two pass it. On the regrowths the rows
+  measure 1.0 mm, 9.2 mm (73% agreement) and not found. The regrowths landed 6–8 voxels off the rows, so these are
+  weak evidence either way. Verdicts are unchanged: no letters.
 
 ## 9. Throughput (shared A10G, other jobs on the GPU)
 - **Hecate:** about 2.1–4.2 min per run on a 2559² crop (≈ 6 cm²), depending on the other load.

@@ -17,6 +17,19 @@ are reported.
 - **How long it took:** one rented g6.12xlarge (4× L4) for about 15 hours, from scouting to the second read.
   Everything, including the pre-registrations with their commit times and every verdict, is in this repository.
 
+**New on 24–25 October: S3, a deeper and wider read, and S3b, a closer look at its three best rows.**
+- **S3:** the neighbouring windings of every zone that grew cleanly in S1. 315 new surfaces: 1,296 cm² clean, about
+  1,123 cm² not read before. reader-v2 read each near the mesh and in two windows shifted ±6 layers; the 108 S1
+  surfaces were read again at ±6 layers. 383 surfaces were reviewed by eye: 363 "I didn't see any ink", 20 "possible
+  ink traces but no legible letters", none "legible letters". Hecate checked all 28 maps behind those 20.
+- **Three rows met the pre-registered escalation rule** (a row of separate blobs ≥ 5 mm along the text direction,
+  ≥ 50% agreement between the two models, judged by eye against the E1d text line). None showed letters.
+- **S3b**, pre-registered before it ran, swept both models over nine depths (±10 layers), regrew a larger surface
+  from each row, and read the windings facing them, with the E1d text line as the control. No row became a strong
+  candidate. The control passed the depth test but failed the 10 mm continuity test, so continuity was
+  uncalibrated and the rows are reported descriptively.
+- **In all, about 1,717 cm² of these scrolls have now been read by two models, with no ink seen.**
+
 **Why this matters:**
 - The two 2025-protocol scrolls that showed text, PHerc. 343 and PHerc. 1447, are May 8.64 µm scans. Four of the 21
   eligible volumes (PHerc0175B, 0483A, 0490A, 1218) had had only one shallow public ink pass.
@@ -75,6 +88,12 @@ Images that show readable letters are not published here, in keeping with the Ve
 - **`sweep/readout.py`:** candidate extraction and control calibration, with unit tests.
 - **`prereg/` and `results/`:** every pre-registration and every verdict.
 
+- **`m3/`: the S3 survey and the S3b closer look.**
+  - Tracers and readers (`batch/s3_trace.sh`, `batch/s3_reader.sh`), the duplicate check (`distinct.py`), deeper
+    windows (`r2_infer_s3.sh`), the Hecate check at matching depth (`hecate_confirm.sh`) and the looking aids.
+  - S3b: the nine-depth sweeps (`s3b_sweep.sh`, `s3b_hecate.sh`), the 160-generation regrowth (`grow_s3b.sh`) and the
+    depth, chain and facing tests (`s3b_analyse.py`).
+
 ## Results (details in [docs/RESULTS.md](docs/RESULTS.md))
 - **Survey of the ten May volumes (S1 with Hecate, S2 with reader-v2).** Verdicts are counted per model over surfaces
   reviewed by eye.
@@ -127,6 +146,22 @@ Images that show readable letters are not published here, in keeping with the Ve
   - Every counted surface sits on papyrus: 0.97–1.00 of its readout area by `m1/onpapyrus.py`. A PHerc0175B surface
     that grew off the papyrus (0.12) is not counted.
 
+- **S3 and S3b: where current ink models fail on real scroll data** (`results/M1-survey-S3.md`,
+  `results/M1-survey-S3b.md`, per-surface verdicts and Hecate checks in `results/`).
+  - **Two-model agreement is common on structure.** On 17 of the 20 surfaces checked, Hecate agreed with reader-v2
+    on more than half of the row in at least one map, including blob fields and forms sitting on cracks and voids that
+    the CT shows. The row's direction, separate forms and a by-eye comparison with known text decided every case.
+  - **Deeper windows find more, but the sweep moves the peaks.** All three escalated rows were found in the windows
+    shifted ±6 layers; the S3b sweep put their peaks at 0, −2 and −9 layers.
+  - **A depth sweep places known text at a sheet face.** On the E1d line, reader-v2 peaks 2.2 layers from the mesh,
+    1.2 layers from the sheet face the CT shows, and 98% of it agrees with Hecate there. Two of the three rows also
+    peak at a face, so depth alone does not separate them from text.
+  - **A continuity test needs a long control.** The chain finder traced only 7.2 mm of the known E1d line on its
+    own surface, short of the 10 mm we had pre-registered.
+  - **Regrowing from a point leaves the sheet.** All three 160-generation regrowths landed 6–8 voxels off the row
+    they were seeded on. Extend a mesh at its edge instead.
+  - **PHerc0800 zone z12149** has the most letter-like forms that are not rows: both models agree on letter-sized
+    forms with stroke-like parts at the deeper windows, lying across the text direction or on cracks.
 - **What it costs:**
   - **Shared A10G:** 6.5–13 cm² of readout area per GPU-hour (Hecate bf16, 5 windows × 2 directions, ≤ 1.8 GB). On
     the CPU, growth takes about 3–10 min and rendering about 1.5 min per 7.5 cm² surface.
@@ -241,6 +276,9 @@ bash m2/batch/s2_worker.sh 0 0-11
   | S1 deviation: follow-up check (labelled "01:50 UTC") | 2026-10-24 01:40:25 | 01:40:25 (growth of its check surfaces) |
   | S1 deviation: row-candidate check (labelled "04:10 UTC") | 03:52:17 | 03:52:18 (growth of its check surfaces) |
   | `prereg/M1-survey-S2.md` | 11:16:15 | 11:17:39 (first survey render for reader-v2) |
+  | `prereg/M1-survey-S3.md` and `M1-survey-S3-queue.tsv` | 2026-10-24 14:38:36 | 14:38:48 (first S3 growth job) |
+  | S3 deviation notes (a faster duplicate check with the same answers; a wording fix) | 20:09:51 | the faster check ran from 20:02 |
+  | `prereg/M1-survey-S3b.md` | 2026-10-25 09:21:08 | 09:21:22 (first S3b render) |
   | E1d pass criterion (in the lab notebook) | 2026-10-22 07:03:09 | 07:13:49 |
 
   - The two S1 deviation labels inside the pre-registration were approximate. The commit times above are
@@ -249,8 +287,8 @@ bash m2/batch/s2_worker.sh 0 0-11
 - **Verdicts are by eye**, and a candidate count never counts as a finding.
   - **Escalation before S2:** a candidate had to reappear under a second independent model or seed, in rows parallel
     to the horizontal fibres.
-  - **Escalation in S2:** a reader-v2 row of separate blobs ≥ 5 mm along the text direction, like the E1d text line,
-    with at least half of its pixels within 0.3 mm of Hecate's.
+  - **Escalation in S2 and S3:** a reader-v2 row of separate blobs ≥ 5 mm along the text direction, like the E1d
+    text line, with at least half of its pixels within 0.3 mm of Hecate's (in S3, at the matching depth).
   - Surfaces with heavy self-crossing are reported as low-confidence geometry.
 
 ## Limitations
@@ -261,7 +299,7 @@ bash m2/batch/s2_worker.sh 0 0-11
 - **reader-v2's training includes PHerc0009B and PHerc0343 segments,** so its controls check the pipeline, not
   held-out ink.
 - **GrowPatch patches,** about 7.5 cm² each, seeded zone by zone, not whole-winding spiral fits.
-  - The 594 cm² read in all is a small fraction of each scroll.
+  - The about 1,717 cm² read in all is a small fraction of each scroll.
   - Zones were chosen for clean sheet separation, which may not be where the writing is.
 - **Unexplained responses:**
   - the outer windings' raised response on PHerc0175B;
